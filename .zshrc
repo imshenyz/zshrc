@@ -105,30 +105,37 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=('nvm' 'rvm' 'load' 'ram_joined' 'battery' 't
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git colorize history pass cp z)
+plugins=(git colorize history pass cp z docker sudo)
 
 # User configuration
 
+export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
+# 设置 JDK 6
+export JAVA_6_HOME=`/usr/libexec/java_home -v 1.6`
+# 设置 JDK 7
+export JAVA_7_HOME=`/usr/libexec/java_home -v 1.7`
+# 设置 JDK 8
+export JAVA_8_HOME=`/usr/libexec/java_home -v 1.8`
+
+#默认JDK 8
+export JAVA_HOME=$JAVA_8_HOME
+
+#alias命令动态切换JDK版本
+alias jdk6="export JAVA_HOME=$JAVA_6_HOME"
+alias jdk7="export JAVA_HOME=$JAVA_7_HOME"
+alias jdk8="export JAVA_HOME=$JAVA_8_HOME"
+
+export M2_HOME=~/Library/Maven
+export PATH="$PATH:$M2_HOME/bin"
 export ANDROID_HOME=~/Library/Android/sdk
 export ANDROID_SDK=$ANDROID_HOME
 export ANDROID_NDK=~/Library/Android/ndk
 export PATH="$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools"
 export PLAY_HOME=~/Applications/play-1.2.7.2
 export PATH="$PATH:$PLAY_HOME"
-# 设置 JDK 7
-export JAVA_7_HOME=`/usr/libexec/java_home -v 1.7`
-# 设置 JDK 8
-export JAVA_8_HOME=`/usr/libexec/java_home -v 1.8`
-
-#默认JDK 8 
-export JAVA_HOME=$JAVA_8_HOME
-
-#alias命令动态切换JDK版本
-alias jdk7="export JAVA_HOME=$JAVA_7_HOME"
-alias jdk8="export JAVA_HOME=$JAVA_8_HOME"
 
 source $ZSH/oh-my-zsh.sh
 
