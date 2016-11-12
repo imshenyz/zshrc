@@ -134,7 +134,7 @@ export ANDROID_HOME=~/Library/Android/sdk
 export ANDROID_SDK=$ANDROID_HOME
 export ANDROID_NDK=~/Library/Android/ndk
 export PATH="$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools"
-export PLAY_HOME=~/Applications/play-1.2.7.2
+export PLAY_HOME=~/Library/Java/play-1.2.7.2
 export PATH="$PATH:$PLAY_HOME"
 
 source $ZSH/oh-my-zsh.sh
